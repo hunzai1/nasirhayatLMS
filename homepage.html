@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        /* Background Carousel */
+        .background-carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            opacity: 0.7;
+        }
+        .background-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            animation: slide 20s infinite;
+        }
+        @keyframes slide {
+            0% { opacity: 1; }
+            33% { opacity: 0; }
+            66% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .background-carousel img:nth-child(2) {
+            animation-delay: 6.67s;
+        }
+        .background-carousel img:nth-child(3) {
+            animation-delay: 13.34s;
+        }
+        /* Container */
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-top: 10px;
+        }
+        .section-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .section {
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .section img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .section h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin: 15px 0;
+        }
+        .section p {
+            padding: 0 20px;
+            color: #666;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        .section button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            margin: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .section button:hover {
+            background-color: #218838;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Carousel -->
+<div class="background-carousel">
+    <img src="images/hmps.jpg" alt="School Image 1">
+    <img src="images/student-portal.jpg" alt="School Image 2">
+    <img src="images/image2.jpg" alt="School Image 3">
+</div>
+
+<div class="container">
+    <!-- School Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Hasegawa Memorial School Logo">
+    </div>
+
+    <h1>Welcome to Hasegawa Memorial LMS</h1>
+    <p>Explore resources, manage your classes, and connect with the academic community.</p>
+
+    <div class="section-container">
+        <!-- Student Section -->
+        <div class="section">
+            <img src="images/student.jpg" alt="Student Portal">
+            <h2>Student Portal</h2>
+            <p>Access courses, submit assignments, view grades, and participate in quizzes.</p>
+            <button onclick="window.location.href='students/student_login.php'">Login as Student</button>
+        </div>
+
+        <!-- Teacher Section -->
+        <div class="section">
+            <img src="images/teachers.jpg" alt="Teacher Dashboard">
+            <h2>Teacher Dashboard</h2>
+            <p>Manage your courses, assign grades, and communicate with students effectively.</p>
+            <button onclick="window.location.href='teachers/teacher_login.php'">Login as Teacher</button>
+        </div>
+
+        <!-- Admin Section -->
+        <div class="section">
+            <img src="images/admin.jpg" alt="Admin Panel">
+            <h2>Admin Panel</h2>
+            <p>Manage users, set permissions, and monitor all activities across the platform.</p>
+            <button onclick="window.location.href='admin/admin_login.html'">Login as Admin</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
