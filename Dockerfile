@@ -13,8 +13,8 @@ COPY . /usr/share/nginx/html
 # Set permissions for the Nginx HTML directory
 RUN chmod -R 755 /usr/share/nginx/html/
 
-# Expose port 8000 for the Nginx server
-EXPOSE 8000
+# Expose port 8001 for the Nginx server
+EXPOSE 8001
 
 # Start the NGINX server
 CMD ["nginx", "-g", "daemon off;"]
